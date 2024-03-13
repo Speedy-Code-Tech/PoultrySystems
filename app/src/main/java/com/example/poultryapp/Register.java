@@ -29,8 +29,11 @@ public class Register extends AppCompatActivity {
                             Toast.makeText(getApplicationContext(), "Please enter all in the field", Toast.LENGTH_SHORT).show();
                         }else{
                             //APPROVE
-                            startActivity(new Intent(Register.this,SMSVerification.class));
-
+                            if(regpass.getText().equals(regconfirmpass.getText())){
+                                startActivity(new Intent(Register.this,SMSVerification.class));
+                            }else{
+                                Toast.makeText(getApplicationContext(), "The Password must be Equal", Toast.LENGTH_SHORT).show();
+                            }
                         }
                     }
                 }
